@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>At-Risk Students</title>
+</head>
+<body>
+    <h1>At-Risk Students</h1>
+    <ul>
+        {% for student, enrollments in at_risk_students.items %}
+            <li>{{ student.name }}:
+                <ul>
+                    {% for enrollment in enrollments %}
+                        <li>{{ enrollment.course.name }} - {{ enrollment.grade }} ({{ enrollment.get_gpa }})</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

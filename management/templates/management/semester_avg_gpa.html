@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Semester Average GPA</title>
+</head>
+<body>
+    <h1>Semester Average GPA</h1>
+    <ul>
+        {% for semester, avg_gpa in avg_gpa_per_semester.items %}
+            <li>{{ semester }}: {{ avg_gpa }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

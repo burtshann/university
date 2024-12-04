@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ student.name }}</title>
+</head>
+<body>
+    <h1>{{ student.name }}</h1>
+    <p>Student ID: {{ student.student_id }}</p>
+    <p>Birth Date: {{ student.birth_date }}</p>
+    <p>Major: {{ student.major }}</p>
+    <p>Enrollment Year: {{ student.enrollment_year }}</p>
+    <a href="{% url 'student_edit' student.pk %}">Edit</a>
+    <form action="{% url 'student_delete' student.pk %}" method="post">{% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+    <a href="{% url 'student_list' %}">Back to Student List</a>
+</body>
+</html>
